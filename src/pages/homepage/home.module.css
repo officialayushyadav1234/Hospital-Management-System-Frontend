@@ -1,0 +1,198 @@
+.home {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* --- Hero Section --- */
+.hero {
+  background: url('/assets/hospital-banner.jpg') no-repeat center center/cover;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #002d72;
+}
+
+.ctaButton {
+  background-color: var(--accent-color, #0056b3); /* Fallback color added */
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: #001f4d;
+  transform: scale(1.05); /* Slight zoom on button hover */
+}
+
+/* --- Doctors Section --- */
+.doctorsContainer {
+  text-align: center;
+  padding: 40px 20px; /* Increased padding */
+  background-color: #f8f9fa;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #002d72;
+  margin-bottom: 30px;
+}
+
+.doctorsGrid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.doctorsCard {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  
+  /* HOVER EFFECT SETUP */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* THE HOVER EFFECT: Lifts up and increases shadow */
+.doctorsCard:hover {
+  transform: translateY(-10px); /* Moves card up */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deep shadow */
+}
+
+.image {
+  width: 100%; /* Changed to fit container */
+  height: 200px;
+  object-fit: cover; /* Prevents image distortion */
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom image slightly when card is hovered */
+.doctorsCard:hover .image {
+  transform: scale(1.03);
+}
+
+.doctorsTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #002d72;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* --- Services Section --- */
+.services {
+  padding: 3rem 2rem;
+}
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #002d72;
+}
+
+.serviceGrid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.serviceCard {
+  background: white;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  border: 1px solid #eee;
+
+  /* HOVER EFFECT SETUP */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  cursor: default;
+}
+
+/* THE HOVER EFFECT: Scale up slightly */
+.serviceCard:hover {
+  transform: scale(1.05);
+  border-color: #002d72; /* Change border color */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.serviceCard img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto 1rem auto; /* Centers image properly */
+  display: block;
+}
+
+.serviceCard h3 {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.serviceCard p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* --- Contact Section --- */
+.contact {
+  background-color: #f0f4f8; /* Added a light background color */
+  padding: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contactButton {
+  background-color: #ffc107; /* Standard yellow */
+  color: black;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px; /* Pill shape */
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contactButton:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px); /* Moves button up slightly */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
