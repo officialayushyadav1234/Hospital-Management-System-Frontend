@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
-import styles from "./Login.module.css";
+import styles from "./login.module.css";
 
 const Login = () => {
   const [activeUser, setActiveUser] = useState("patient");
