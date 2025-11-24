@@ -10,7 +10,7 @@ const DoctorProfile = () => {
   useEffect(() => {
     if (doctorId) {
       // ✅ Correct Backend URL
-      fetch(`http://localhost:8181/api/doctor/${doctorId}`)
+      fetch(`https://hospital-management-system-backend-wrco.onrender.com/api/doctor/${doctorId}`)
         .then((response) => {
              if (!response.ok) {
                  throw new Error("Network response was not ok");

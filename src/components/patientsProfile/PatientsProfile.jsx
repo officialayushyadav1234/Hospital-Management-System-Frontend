@@ -9,7 +9,7 @@ const PatientsProfile = () => {
   useEffect(() => {
     if (patientId) {
       axios
-        .get(`http://localhost:8181/api/patient/${patientId}`)
+        .get(`https://hospital-management-system-backend-wrco.onrender.com/api/patient/${patientId}`)
         .then((response) => setPatient(response.data))
         .catch((error) => console.error("Error fetching patient data:", error));
     }

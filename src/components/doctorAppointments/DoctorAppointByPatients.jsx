@@ -29,7 +29,7 @@ const DoctorAppointByPatients = () => {
 
     // 4. Fetch Data (Using axios for better error handling)
    // 4. Fetch Data
-    axios.get(`http://localhost:8181/api/appointment/doctorId/${doctorId}`)
+    axios.get(`https://hospital-management-system-backend-wrco.onrender.com/api/appointment/doctorId/${doctorId}`)
       .then((response) => {
         const data = response.data;
         console.log("API RAW DATA:", data); // Check this log in console!

@@ -41,7 +41,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8181/api/patient",
+        "https://hospital-management-system-backend-wrco.onrender.com/api/patient",
         patient,
         {
           headers: {

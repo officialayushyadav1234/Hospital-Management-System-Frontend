@@ -4,7 +4,7 @@ import Select from "react-select"; // Import react-select
 import toast from "react-hot-toast";
 import style from "./DoctorReg.module.css";
 
-const API_BASE_URL = "http://localhost:8181/api/doctor";
+const API_BASE_URL = "https://hospital-management-system-backend-wrco.onrender.com/api/doctor";
 
 const specializations = [
   "Allergy and immunology",

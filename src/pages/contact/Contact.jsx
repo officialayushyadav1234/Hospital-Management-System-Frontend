@@ -26,7 +26,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8181/contact",
+        "https://hospital-management-system-backend-wrco.onrender.com/contact",
         formData
       );
       if (response.status === 200) {

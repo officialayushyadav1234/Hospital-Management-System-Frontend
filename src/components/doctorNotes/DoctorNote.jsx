@@ -10,7 +10,7 @@ const DoctorNote = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8181/api/doctor-notes/patient/${patientId}`)
+      .get(`https://hospital-management-system-backend-wrco.onrender.com/api/doctor-notes/patient/${patientId}`)
       .then((response) => {
         setNotes(response.data);
       })

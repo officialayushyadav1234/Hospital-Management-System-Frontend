@@ -9,7 +9,7 @@ const PatientAppointmentList = () => {
   useEffect(() => {
     if (patientId) {
       axios
-        .get(`http://localhost:8181/api/appointment/patientId/${patientId}`)
+        .get(`https://hospital-management-system-backend-wrco.onrender.com/api/appointment/patientId/${patientId}`)
         .then((response) => {
           // Sort appointments by date (most recent first)
           const sortedAppointments = response.data.sort(

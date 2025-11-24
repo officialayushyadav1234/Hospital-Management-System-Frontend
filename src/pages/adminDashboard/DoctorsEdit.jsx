@@ -27,7 +27,7 @@ const DoctorsEdit = () => {
   useEffect(() => {
     const fetchDoctor = async () => {
       try {
-        const response = await axios.get(`http://localhost:8181/api/doctor/${id}`);
+        const response = await axios.get(`https://hospital-management-system-backend-wrco.onrender.com/api/doctor/${id}`);
         setDoctor(response.data);
         setLoading(false);
       } catch (error) {
@@ -50,7 +50,7 @@ const DoctorsEdit = () => {
     
     try {
       // Send PUT request to update
-      await axios.put(`http://localhost:8181/api/doctor/${id}`, doctor);
+      await axios.put(`https://hospital-management-system-backend-wrco.onrender.com/api/doctor/${id}`, doctor);
       
       toast.success("Doctor details updated successfully!");
       navigate("/admin"); // Redirect back to Admin Dashboard after save

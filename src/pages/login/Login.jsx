@@ -26,12 +26,12 @@ const Login = () => {
     const safePass = encodeURIComponent(formData.password);
 
     if (activeUser === "Doctor") {
-      apiEndpoint = `http://localhost:8181/api/doctor/authenticate?doctorId=${safeId}&password=${safePass}`;
+      apiEndpoint = `https://hospital-management-system-backend-wrco.onrender.com/api/doctor/authenticate?doctorId=${safeId}&password=${safePass}`;
     } else if (activeUser === "patient") {
-      apiEndpoint = `http://localhost:8181/api/patient/auth?patientId=${safeId}&password=${safePass}`;
+      apiEndpoint = `https://hospital-management-system-backend-wrco.onrender.com/api/patient/auth?patientId=${safeId}&password=${safePass}`;
     } else {
       // ✅ FIX: Updated to match the new AdminController structure
-      apiEndpoint = `http://localhost:8181/api/authenticateAdmin/login?identifier=${safeEmail}&password=${safePass}`;
+      apiEndpoint = `https://hospital-management-system-backend-wrco.onrender.com/api/authenticateAdmin/login?identifier=${safeEmail}&password=${safePass}`;
     }
 
     try {

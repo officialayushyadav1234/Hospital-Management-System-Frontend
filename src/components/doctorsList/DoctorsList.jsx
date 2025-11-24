@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import style from "./DoctorsList.module.css";
 import { Link } from "react-router-dom";
 
-const API_BASE_URL = "http://localhost:8181/api/doctor";
+const API_BASE_URL = "https://hospital-management-system-backend-wrco.onrender.com/api/doctor";
 
 const DoctorsList = () => {
   const [doctors, setDoctors] = useState([]);

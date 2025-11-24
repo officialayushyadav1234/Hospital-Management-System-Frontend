@@ -45,7 +45,7 @@ const CreateDoctorNotes = () => {
     console.log("Sending Payload:", payload); // Debugging
 
     try {
-      const response = await fetch("http://localhost:8181/api/doctor-notes", {
+      const response = await fetch("https://hospital-management-system-backend-wrco.onrender.com/api/doctor-notes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

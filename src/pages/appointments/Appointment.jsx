@@ -35,7 +35,7 @@ const Appointment = () => {
 
     const fetchDoctors = async () => {
       try {
-        const response = await axios.get("http://localhost:8181/api/doctor");
+        const response = await axios.get("https://hospital-management-system-backend-wrco.onrender.com/api/doctor");
         setDoctors(response.data);
       } catch (err) {
         console.error("Failed to load doctors", err);
@@ -76,7 +76,7 @@ const Appointment = () => {
     try {
       // Note: Make sure URL matches your Controller (@RequestMapping)
       const response = await axios.post(
-        "http://localhost:8181/api/appointment",
+        "https://hospital-management-system-backend-wrco.onrender.com/api/appointment",
         payload
       );
 

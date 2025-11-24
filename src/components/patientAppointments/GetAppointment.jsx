@@ -37,7 +37,7 @@ const GetAppointment = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await axios.get("http://localhost:8181/api/doctor");
+        const response = await axios.get("https://hospital-management-system-backend-wrco.onrender.com/api/doctor");
         setDoctors(response.data);
       } catch (error) {
         console.error("Error fetching doctors:", error);
@@ -52,7 +52,7 @@ const GetAppointment = () => {
       const fetchPatient = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:8181/api/patient/${patientId}`
+            `https://hospital-management-system-backend-wrco.onrender.com/api/patient/${patientId}`
           );
           setPatient(response.data);
         } catch (error) {
@@ -96,7 +96,7 @@ const GetAppointment = () => {
     console.log("Sending Payload:", payload);
 
     try {
-      const response = await axios.post("http://localhost:8181/api/appointment", payload);
+      const response = await axios.post("https://hospital-management-system-backend-wrco.onrender.com/api/appointment", payload);
       
       if (response.status === 200 || response.status === 201) {
           setMessage("Appointment booked successfully!");
