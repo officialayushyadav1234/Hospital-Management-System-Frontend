@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import style from "./DoctorsList.module.css";
+import style from "./doctorsList.module.css";
 import { Link } from "react-router-dom";
 
 const API_BASE_URL = "https://hospital-management-system-backend-wrco.onrender.com/api/doctor";

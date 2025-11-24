@@ -1,4 +1,4 @@
-import styles from "./Admin.module.css";
+import styles from "./admin.module.css";
 import DoctorReg from "../../components/doctorReg/DoctorReg";
 import DoctorsList from "../../components/doctorsList/DoctorsList";
 

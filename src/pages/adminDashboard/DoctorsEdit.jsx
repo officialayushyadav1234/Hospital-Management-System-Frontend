@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
-import style from "./DoctorsEdit.module.css"; // Make sure to create this CSS file
+import style from "./doctorsEdit.module.css"; // Make sure to create this CSS file
 
 const DoctorsEdit = () => {
   const { id } = useParams();

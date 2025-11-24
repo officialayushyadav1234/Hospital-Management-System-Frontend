@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import style from "./DoctorNote.module.css";
+import style from "./doctorNote.module.css";
 import { jsPDF } from "jspdf";
 
 const DoctorNote = () => {
