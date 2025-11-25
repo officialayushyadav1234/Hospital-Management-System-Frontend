@@ -1,80 +1,106 @@
 // src/pages/Home/Home.jsx
-import styles from "./home.module.css"; // Importing CSS module
-
+import styles from "./home.module.css";
 import { Link } from "react-router-dom";
-import Hero from "./Hero";
+import Hero from "./Hero"; 
 
 const doctors = [
   {
     title: "General Checkup",
-    description: "Routine health checkups by expert doctors.",
-    image: "/doc1.jpg", // Ensure the image exists in the public folder
+    description: "Comprehensive health screenings and routine care for all ages.",
+    // Image: Doctor with Patient
+    image: "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=500", 
   },
   {
     title: "Specialist Consultation",
-    description: "Consult with expert specialists for various health concerns.",
-    image: "/doc2.jpg",
+    description: "Connect with top-tier specialists for cardiology, neurology, and more.",
+    // Image: Specialist Doctor
+    image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=500",
   },
   {
     title: "Emergency Care",
-    description: "Immediate medical attention for emergencies.",
-    image: "/doc3.jpg",
+    description: "24/7 Rapid response teams equipped for critical medical situations.",
+    // UPDATED IMAGE: Busy Hospital Hallway / Stretcher (Working Link)
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=500",
   },
+];
+
+const services = [
+    {
+        title: "Telemedicine",
+        desc: "Consult doctors from the comfort of your home.",
+        img: "https://cdn-icons-png.flaticon.com/512/3063/3063176.png"
+    },
+    {
+        title: "Lab Diagnostics",
+        desc: "High-tech labs for accurate and fast reporting.",
+        img: "https://cdn-icons-png.flaticon.com/512/3209/3209074.png"
+    },
+    {
+        title: "Advanced Surgery",
+        desc: "Minimally invasive surgical procedures.",
+        img: "https://cdn-icons-png.flaticon.com/512/2313/2313469.png"
+    }
 ];
 
 const Home = () => {
   return (
     <div className={styles.home}>
-      <Hero />
-      {/* Hero Section */}
+      {/* 1. Modern Hero Section */}
+      <Hero /> 
 
-      <div className={styles.doctorsContainer}>
-        <h2 className={styles.title}>Our Doctor Services</h2>
+      {/* 2. Doctor Services Section */}
+      <section className={styles.doctorsContainer}>
+        <div className={styles.sectionHeader}>
+            <h2 className={styles.title}>Our Medical Team</h2>
+            <p className={styles.subtitle}>Meet the experts dedicated to your well-being.</p>
+        </div>
+
         <div className={styles.doctorsGrid}>
           {doctors.map((doctor, index) => (
             <div key={index} className={styles.doctorsCard}>
-              <img
-                src={doctor.image}
-                alt={doctor.title}
-                className={styles.image}
-              />
-              <h3 className={styles.doctorsTitle}>{doctor.title}</h3>
-              <p className={styles.description}>{doctor.description}</p>
+              <div className={styles.imageWrapper}>
+                <img
+                    src={doctor.image}
+                    alt={doctor.title}
+                    className={styles.image}
+                />
+              </div>
+              <div className={styles.cardContent}>
+                <h3 className={styles.doctorsTitle}>{doctor.title}</h3>
+                <p className={styles.description}>{doctor.description}</p>
+              </div>
             </div>
           ))}
         </div>
-      </div>
-      {/* Services Section */}
+      </section>
+
+      {/* 3. Services Section */}
       <section className={styles.services}>
-        <h2>Our Services</h2>
+        <div className={styles.sectionHeader}>
+            <h2 className={styles.title}>Why Choose Us?</h2>
+            <p className={styles.subtitle}>World-class facilities for your healthcare needs.</p>
+        </div>
+
         <div className={styles.serviceGrid}>
-          <div className={styles.serviceCard}>
-            <img src="/blog1.jpg" alt="Doctor Consultation" />
-            <h3>Doctor Consultation</h3>
-            <p>Get expert advice from our specialized doctors.</p>
-          </div>
-          <div className={styles.serviceCard}>
-            <img src="/blog2.jpg" alt="Lab Tests" />
-            <h3>Lab Tests</h3>
-            <p>We provide accurate and quick diagnostic services.</p>
-          </div>
-          <div className={styles.serviceCard}>
-            <img src="/blog3.jpg" alt="Surgeries" />
-            <h3>Surgeries</h3>
-            <p>Advanced and safe surgical procedures.</p>
-          </div>
+            {services.map((service, index) => (
+                 <div key={index} className={styles.serviceCard}>
+                    <img src={service.img} alt={service.title} className={styles.serviceIcon} />
+                    <h3>{service.title}</h3>
+                    <p>{service.desc}</p>
+                 </div>
+            ))}
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* 4. Contact / CTA Section */}
       <section className={styles.contact}>
-        <h2>Need Assistance?</h2>
+        <h2>Ready to prioritize your health?</h2>
         <p>
-          Call us at <strong>+91 6201592239</strong> or email{" "}
-          <strong>support@hospital.com</strong>
+          Our team is available 24/7 to assist you. <br />
+          Call us at <strong>+91 6201592239</strong>
         </p>
         <Link to="/contact">
-          <button className={styles.contactButton}>Contact Us</button>
+          <button className={styles.contactButton}>Contact Us Now</button>
         </Link>
       </section>
     </div>

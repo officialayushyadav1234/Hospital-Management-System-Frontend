@@ -1,198 +1,211 @@
+/* --- Global Variables & Theme --- */
+:root {
+  --primary-color: #0ea5e9; /* Modern Sky Blue */
+  --secondary-color: #0f172a; /* Dark Navy */
+  --accent-color: #84cc16; /* Fresh Lime Green */
+  --bg-light: #f8fafc;
+  --text-dark: #334155;
+  --text-light: #64748b;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
 .home {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* --- Section Headers --- */
+.sectionHeader {
   text-align: center;
-  padding: 2rem;
-}
-
-/* --- Hero Section --- */
-.hero {
-  background: url('/assets/hospital-banner.jpg') no-repeat center center/cover;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 2rem;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  color: #002d72;
-}
-
-.ctaButton {
-  background-color: var(--accent-color, #0056b3); /* Fallback color added */
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.ctaButton:hover {
-  background-color: #001f4d;
-  transform: scale(1.05); /* Slight zoom on button hover */
-}
-
-/* --- Doctors Section --- */
-.doctorsContainer {
-  text-align: center;
-  padding: 40px 20px; /* Increased padding */
-  background-color: #f8f9fa;
+  margin-bottom: 60px;
 }
 
 .title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #002d72;
-  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e293b; /* Hardcoded fallback or use var */
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
 }
 
+/* Decorative underline for titles */
+.title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color, #0ea5e9);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Doctors Section (Clean White) --- */
+.doctorsContainer {
+  padding: 80px 20px;
+  background-color: white;
+}
+
+/* RESPONSIVE GRID: Auto-fits columns based on screen size */
 .doctorsGrid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .doctorsCard {
   background: white;
-  border-radius: 10px;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-  
-  /* HOVER EFFECT SETUP */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s ease;
+  border: 1px solid #f1f5f9;
 }
 
-/* THE HOVER EFFECT: Lifts up and increases shadow */
 .doctorsCard:hover {
-  transform: translateY(-10px); /* Moves card up */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deep shadow */
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
 }
 
 .image {
-  width: 100%; /* Changed to fit container */
-  height: 200px;
-  object-fit: cover; /* Prevents image distortion */
-  border-radius: 8px;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-/* Zoom image slightly when card is hovered */
 .doctorsCard:hover .image {
-  transform: scale(1.03);
+  transform: scale(1.1); /* Smooth zoom effect */
+}
+
+.cardContent {
+  padding: 25px;
+  text-align: center;
 }
 
 .doctorsTitle {
-  font-size: 18px;
-  font-weight: bold;
-  color: #002d72;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
 }
 
 .description {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
 }
 
-/* --- Services Section --- */
+/* --- Services Section (Soft Gray Background) --- */
 .services {
-  padding: 3rem 2rem;
-}
-
-.services h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #002d72;
+  padding: 80px 20px;
+  background-color: #f8fafc; /* Alternating background color */
 }
 
 .serviceGrid {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .serviceCard {
   background: white;
-  padding: 2rem 1rem;
-  border-radius: 10px;
-  width: 250px;
+  padding: 40px 30px;
+  border-radius: 16px;
   text-align: center;
-  border: 1px solid #eee;
-
-  /* HOVER EFFECT SETUP */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-in-out;
-  cursor: default;
+  transition: all 0.3s ease;
+  border-bottom: 4px solid transparent; /* Hidden border for hover */
 }
 
-/* THE HOVER EFFECT: Scale up slightly */
 .serviceCard:hover {
-  transform: scale(1.05);
-  border-color: #002d72; /* Change border color */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-bottom: 4px solid var(--primary-color, #0ea5e9);
 }
 
-.serviceCard img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin: 0 auto 1rem auto; /* Centers image properly */
-  display: block;
+.serviceIcon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  padding: 15px;
 }
 
 .serviceCard h3 {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
 }
 
-.serviceCard p {
-  font-size: 0.95rem;
-  color: #666;
-}
-
-/* --- Contact Section --- */
+/* --- Contact Section (Modern CTA Gradient) --- */
 .contact {
-  background-color: #f0f4f8; /* Added a light background color */
-  padding: 3rem;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
   text-align: center;
-  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 40px;
 }
 
 .contactButton {
-  background-color: #ffc107; /* Standard yellow */
-  color: black;
+  background-color: #0ea5e9;
+  color: white;
   border: none;
-  padding: 0.8rem 2rem;
-  border-radius: 30px; /* Pill shape */
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 1.5rem;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .contactButton:hover {
-  background-color: #e0a800;
-  transform: translateY(-2px); /* Moves button up slightly */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  background-color: #0284c7;
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(14, 165, 233, 0.4);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .doctorsGrid, .serviceGrid {
+    grid-template-columns: 1fr; /* Force single column on phone */
+  }
 }

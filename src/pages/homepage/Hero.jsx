@@ -5,21 +5,21 @@ import style from "./hero.module.css";
 const slides = [
   {
     id: 1,
-    title: "Welcome to Our Hospital",
-    subtitle: "Your Health, Our Priority",
-    img: "https://i.pinimg.com/736x/a1/f2/35/a1f235c5c31f06c967e01c8f239b829e.jpg",
+    title: "World-Class Healthcare",
+    subtitle: "Your health is our priority. Experience the future of medicine.",
+    img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
   },
   {
     id: 2,
-    title: "Advanced Medical Care",
-    subtitle: "State-of-the-art Facilities & Expert Doctors",
-    img: "https://i.pinimg.com/736x/94/86/0d/94860ddea4c38738cc784e388cd0c9fd.jpg",
+    title: "Expert Doctors",
+    subtitle: "Top specialists dedicated to providing the best care possible.",
+    img: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop",
   },
   {
     id: 3,
-    title: "24/7 Emergency Services",
-    subtitle: "Always Ready to Serve You",
-    img: "https://i.pinimg.com/736x/59/c2/d1/59c2d1eb8d20d330c70bba99f8b06f12.jpg",
+    title: "24/7 Emergency",
+    subtitle: "Always ready. Always open. We are here when you need us most.",
+    img: "https://images.unsplash.com/photo-1516549655169-df83a092dd14?q=80&w=2070&auto=format&fit=crop",
   },
 ];
 
@@ -27,27 +27,53 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
+  // Auto-play logic
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 5000); // 5 seconds is better for reading
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section
-      className={style.hero}
-      style={{ backgroundImage: `url(${slides[currentSlide].img})` }}
-    >
-      <div className={style.card}>
-        <h1 className={style.title}>{slides[currentSlide].title}</h1>
-        <p className={style.subtitle}>{slides[currentSlide].subtitle}</p>
-        <button
-          className={style.ctaButton}
-          onClick={() => navigate("/register")}
-        >
-          Book Appointment
-        </button>
+    <section className={style.hero}>
+      {/* Background Image Layer with Zoom Effect */}
+      <div
+        className={style.heroBackground}
+        style={{ backgroundImage: `url(${slides[currentSlide].img})` }}
+      ></div>
+
+      {/* Dark Overlay for Text Readability */}
+      <div className={style.overlay}></div>
+
+      {/* Content Layer */}
+      <div className={style.contentContainer}>
+        <div className={style.textContent}>
+          <span className={style.badge}>Welcome to Our Hospital</span>
+          <h1 className={style.title}>{slides[currentSlide].title}</h1>
+          <p className={style.subtitle}>{slides[currentSlide].subtitle}</p>
+          
+          <div className={style.buttonGroup}>
+            <button
+              className={style.primaryButton}
+              onClick={() => navigate("/register")}
+            >
+              Book Appointment
+            </button>
+            <button className={style.secondaryButton}>Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Navigation Dots */}
+      <div className={style.dotsContainer}>
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`${style.dot} ${currentSlide === index ? style.activeDot : ""}`}
+            onClick={() => setCurrentSlide(index)}
+          ></div>
+        ))}
       </div>
     </section>
   );
